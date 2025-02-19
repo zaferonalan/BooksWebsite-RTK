@@ -5,7 +5,7 @@ import Loading from '../components/Loading'
 import BookList from '../components/BookList'
 
 const SearchResult: React.FC = () => {
-    const { searchResults, loading, error } = useSelector((state:RootState) => state.books)
+    const { searchResult, loading, error } = useSelector((state:RootState) => state.books)
 
     useEffect(() => {
         window.scrollTo({top: 650, behavior: "smooth"})
@@ -23,7 +23,7 @@ const SearchResult: React.FC = () => {
                 ): error ? (
                     <div className='error-message'>{error}</div>
                 ): (
-                    <BookList books={searchResults.slice(0, 16)}/>
+                    <BookList books={searchResult.slice(0, 16)}/>
                 )}
             </div>
         </div>
