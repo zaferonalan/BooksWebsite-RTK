@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/booklist.css';
+import { Link } from 'react-router-dom';
 
 interface Book{
     title: string,
@@ -20,7 +21,7 @@ const BookList:React.FC<BookListProps> = ({books}) => {
         {
             books.length > 0 ? (
                 books.map((book, bookIndex) => (
-                    <div className='book-item' key={bookIndex}>
+                    <Link to={`/works/${book.key.replace("/works/", "")}`} className='book-item' key={bookIndex}>
                         <div className='book-image'>
                             {
                                 book.cover_id ? (
@@ -45,7 +46,7 @@ const BookList:React.FC<BookListProps> = ({books}) => {
                         <div className='details'>
                             <span>View Details</span>
                         </div>
-                    </div>
+                    </Link>
                 ))
             ):(
                 <div>No Books Found</div>
