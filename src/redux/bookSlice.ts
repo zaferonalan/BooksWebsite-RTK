@@ -7,7 +7,7 @@ const BASE_URL = "https://openlibrary.org"
 interface BooksResponse {
     works: {
         authors: {name: string}[],
-        key: "string",
+        key: string,
         title: string,
         cover_id?: number
     }[]
@@ -25,7 +25,7 @@ interface BooksDetailsResponse {
     subjects: string[],
     description: string | {value:string},
     key: string,
-    covers?: number
+    covers?: number[]
 }
 
 interface BookState {
@@ -118,7 +118,7 @@ const booksSlice = createSlice({
         })
         .addCase(fetchBookDetails.rejected, (state, action) => {
             state.loading = false
-            state.error = action.error.message || "Faild to fetch data"
+            state.error = action.error.message || "Failed to fetch data"
         })
     },
 })
