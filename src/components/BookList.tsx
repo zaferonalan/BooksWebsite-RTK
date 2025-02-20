@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 interface Book{
     title: string,
     author_name: string[],
-    authors?: {name: string} []
-    key: string
-    cover_id?: number
+    authors?: {name: string} [],
+    key: string,
+    cover_id?: number,
     cover_i?: number
 }
 

@@ -1,4 +1,4 @@
-import { RootState } from '@reduxjs/toolkit/query'
+import { RootState } from '../redux/store';
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import Loading from '../components/Loading'

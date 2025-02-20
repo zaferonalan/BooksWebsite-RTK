@@ -28,7 +28,10 @@ const Home: React.FC = () => {
                 <div className='home-title'>
                   <h3>{category}</h3>
                 </div>
-                <BookList books={books.slice(0,4)}/>
+                <BookList books={books.slice(0,4).map(book => ({
+                  ...book,
+                  author_name: book.authors?.map(a => a.name) || []
+                }))}/>
               </div>
             )
           })}
